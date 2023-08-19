@@ -1,10 +1,9 @@
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import make_regression
-import pandas as pd
-
 
 class SimulateInjRecPairs_1:
     def __init__(self, N=100000, m_min=10, m_max=20):
@@ -20,11 +19,12 @@ class SimulateInjRecPairs_1:
         m_max: Upper bound of masses
 
         RETURNS:
-        ========
+      m ========
         Distribution of injected masses reshaped as (-1, 1)   
         """
         M_inj = m_min + (m_max - m_min) * np.random.random(N)
         self.M_inj = M_inj.reshape(-1, 1)
+
 
     def fake_recovered_masses(self, offset, sigma):
         """
@@ -33,7 +33,7 @@ class SimulateInjRecPairs_1:
         This method creates a fake distribution of recovered masses based on the injected masses
         """
         #now we will get a gaussian distribution of the M_rec with an offset to t
-        M_rec = np.random.normal(self.M_inj + offset, sigma)
+        M_rec = np.random.normal(M_inj + offset, sigma)
         #now we have both the mass injections and mass recovered in however the len the N sample is
         self.M_rec = M_rec.reshape(-1, 1)
         #reshaping is better for the machine learning model
