@@ -7,6 +7,50 @@ import pandas as pd
 
 
 class SimulateInjRecPairs_1:
+
+#         This method creates a fake distribution of recovered masses based on the injected masses
+
+#         This method creates a fake distribution of recovered masses based on the injected masses within a random range and offset
+# 	======
+# 
+# 	INPUT:
+# 	======
+# 	offset: Number difference from mass injection
+# 	sigma: Standard Deviation of sample
+# 
+# 	RETURNS:
+# 	=======
+# 	Distribution of fake recovered masses based off injections reshaped as (-1, 1)
+# 	"""
+# 	METHOD:
+# 	======
+# 	This method produces a random distirbution of predicted masses based on the masses injected and masses recovered
+# 	======
+# 
+# 	INPUT:
+# 	======
+# 	test_size:
+# 	random_state:
+# 	test_result:
+# 
+# 	RETURNS:
+# 	=======
+# 	Distribution of the models tested sample of injected masses and predicted masses
+# 	"""
+# 	"""
+# 	METHOD:
+# 	======
+# 	This method produces a plot distribution of predicted masses to test mass points
+# 	
+# 	INPUT:
+# 	======
+# 	None
+# 
+# 	RETURNS:
+# 	=======
+# 	Plot figure of returned tested masses compared to predicted masses returned from mass_predictor module
+# 	"""
+
     def __init__(self, N=100000, m_min=10, m_max=20):
         """
         METHOD:
